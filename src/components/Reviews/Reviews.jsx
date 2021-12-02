@@ -4,6 +4,24 @@
 // import PropTypes from 'prop-types';
 // import './Reviews.scss';
 
+
+
+
+
+
+
+export function Reviews() {
+    return (
+        <>
+        <h2>Cast</h2>
+
+
+        </>
+
+    )
+    
+};
+
 // export default class Reviews extends Component {
 //   state = {
 //     reviews: null,

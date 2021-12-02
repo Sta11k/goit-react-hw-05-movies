@@ -1,3 +1,21 @@
+export  function HomePage(params) {
+    
+    return (
+        <h1>HomePage</h1>
+    )
+};
+
+
+
+
+
+
+
+
+
+
+
+
 // import { Component } from 'react';
 // import './HomeView.scss';
 // import MovieTrends from '../components/MovieTrends';

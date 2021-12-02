@@ -6,6 +6,17 @@
 // import API from '../services/moviesApi';
 // import Loader from 'react-loader-spinner';
 
+export function MovieDetailsPage ()  {
+    return (
+      
+        <h2> MovieDetailsPage</h2>
+  )  
+};
+
+
+
+
+
 // const Cast = lazy(() =>
 //   import('../components/Cast' /* webpackChunkName: "cast-view" */),
 // );

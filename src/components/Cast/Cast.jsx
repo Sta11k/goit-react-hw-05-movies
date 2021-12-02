@@ -4,6 +4,21 @@
 // import './Cast.scss';
 // import defaultImage from '../../img/default.png';
 
+export function Cast() {
+    return (
+        <>
+        <h2>Cast</h2>
+
+
+        </>
+
+    )
+    
+};
+
+
+
+
 // export default class Cast extends Component {
 //   state = {
 //     cast: null,

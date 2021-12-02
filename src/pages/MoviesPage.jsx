@@ -5,6 +5,17 @@
 // import queryString from 'query-string';
 // import Button from '@material-ui/core/Button';
 
+
+export function MoviesPage ()  {
+    return (
+      
+        <h2> MoviesPage</h2>
+  )  
+};
+
+
+
+
 // class MoviesPage extends Component {
 //   state = {
 //     query: '',
