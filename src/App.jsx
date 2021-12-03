@@ -1,13 +1,13 @@
-import './App.scss';
+import "./App.scss";
 // import { Suspense, lazy } from 'react';
-import { Routes, Route, Link } from 'react-router-dom';
-import { HomePage } from './pages/HomePage';
+import { Routes, Route, Link } from "react-router-dom";
+import { HomePage } from "./pages/HomePage";
 import { MoviesPage } from "./pages/MoviesPage";
-import { MovieDetailsPage } from './pages/MovieDetailsPage';
-import { Notfoundpages } from './pages/Notfoundpages';
-import { Cast } from './components/Cast/Cast';
-import { Reviews} from './components/Reviews/Reviews'
-
+import { MovieDetailsPage } from "./pages/MovieDetailsPage";
+import { Notfoundpages } from "./pages/Notfoundpages";
+import { Cast } from "./components/Cast/Cast";
+import { Reviews } from "./components/Reviews/Reviews";
+import { Navigation } from "./components/Navigation/Navigation";
 // import routes from './routes';
 // import AppBar from './components/AppBar';
 // import Loader from 'react-loader-spinner';
@@ -24,25 +24,30 @@ import { Reviews} from './components/Reviews/Reviews'
 export function App() {
   return (
     <>
-      <header>
-        <Link to="/">HomePage</Link>
-        <Link to='/movies/:movieId/'>MovieDetailsPage</Link>
-        <Link to='/movies'>MoviesPage</Link>
-      </header>
+      {/* <header>
+        <Navigation />
+      </header> */}
       <Routes>
-        <Route path="/" element={<HomePage/> }   />
-        <Route path='/movies/:movieId/' className="activeLink" element={<MovieDetailsPage />} >
-          <Route path="cast" element={< Cast/>} />
-          <Route path="reviews" element={ <Reviews/>} />
+        <Route path="/" element={<Navigation />}>
+          <Route index element={<HomePage />} />
+
+          <Route path="movies/*" element={<MoviesPage />} />
+
+          <Route
+            path=":movieId/*"
+            className="activeLink"
+            element={<MovieDetailsPage />}
+          />
+          {/* <Route path="cast" element={<Cast />} />
+            <Route path="reviews" element={<Reviews />} />
+          </Route> */}
         </Route>
-        <Route path='/movies' element={<MoviesPage />} />
-        <Route path="" element={<Notfoundpages/> }   />
+
+        <Route path="" element={<Notfoundpages />} />
       </Routes>
-
-
     </>
-  )
- };
+  );
+}
 
 // {/* <AppBar />
 // <Suspense

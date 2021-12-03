@@ -1,33 +1,55 @@
-// import axios from 'axios';
+import axios from "axios";
 
-// axios.defaults.baseURL = 'https://api.themoviedb.org/3/';
+const API_KEY = "eef1cd881f885cf39765ac4359f8bbb0";
+axios.defaults.baseURL = "https://api.themoviedb.org/3/";
+// export const PER_PAGE = 12;
 
-// const API_KEY = 'eef1cd881f885cf39765ac4359f8bbb0';
+export const getMoviesTrand = async (page = 1) => {
+  console.log("GetApiPAGE", page);
+  return await axios
+    .get(`trending/movie/week?api_key=${API_KEY}&page=${page}`)
+    .then((response) => response.data.results);
+  // .then(response => console.log(response.data.hits));
+};
 
-// const getMovieTrends = page => {
-//   return axios
-//     .get(`trending/movie/week?api_key=${API_KEY}&page=${page}`);
+// const getMoviesTrand = {
+//   getMoviesTrand,
+// };
+
+// trending / movie / week ? api_key = ${ API_KEY }& page=${ page }`
+// /trending/{media_type}/{time_window}
+// import axios from "axios";
+
+// axios.defaults.baseURL = "https://api.themoviedb.org/3/";
+
+// const API_KEY = "eef1cd881f885cf39765ac4359f8bbb0";
+
+// const getMovieTrends = (page) => {
+//   return axios.get(`trending/movie/week?api_key=${API_KEY}&page=${page}`);
 // };
 
 // const getMovieByQuery = ({ query, page }) => {
 //   return axios
-//     .get(`search/movie?query=${query}&api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false`,)
-//     .then(response => response.data.results);
+//     .get(
+//       `search/movie?query=${query}&api_key=${API_KEY}&language=en-US&page=${page}&include_adult=false`
+//     )
+//     .then((response) => response.data.results);
 // };
 
-// const getMoviesDetail = movieId => {
-//   return axios
-//     .get(`movie/${movieId}?api_key=${API_KEY}&language=en-US`);
+// const getMoviesDetail = (movieId) => {
+//   return axios.get(`movie/${movieId}?api_key=${API_KEY}&language=en-US`);
 // };
 
-// const getMovieCast = movieId => {
-//   return axios
-//     .get(`/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`,);
+// const getMovieCast = (movieId) => {
+//   return axios.get(
+//     `/movie/${movieId}/credits?api_key=${API_KEY}&language=en-US`
+//   );
 // };
 
-// const getMovieReview = movieId => {
-//   return axios
-//     .get(`/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`,);
+// const getMovieReview = (movieId) => {
+//   return axios.get(
+//     `/movie/${movieId}/reviews?api_key=${API_KEY}&language=en-US&page=1`
+//   );
 // };
 // // eslint-disable-next-line
 // export default {

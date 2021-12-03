@@ -1,4 +1,6 @@
 // import { NavLink } from 'react-router-dom';
+import { NavLink, Outlet } from "react-router-dom";
+import s from "./Navigation.module.css";
 // import routes from '../../routes';
 // import { Button } from '@material-ui/core';
 // // import { ThemeProvider, createTheme } from '@material-ui/core/styles';
@@ -11,6 +13,36 @@
 // //     }
 // // }
 // // });
+export function Navigation() {
+  //   const setActive = ({ isActive }) => (isActive ? "active-link" : "");
+  const setActive = ({ isActive }) => ({ color: isActive ? "blue" : "black" });
+  return (
+    <>
+      <nav className={s.nav}>
+        <ul className={s.nav__list}>
+          <li className={s.nav__item}>
+            <NavLink to="/" style={setActive}>
+              Home
+            </NavLink>
+          </li>
+          {/* <li className={s.nav__item}>
+          <NavLink to="/movies/:movieId/" style={setActive}>
+            MovieDetailsPage
+          </NavLink>
+        </li> */}
+          <li className={s.nav__item}>
+            <NavLink to="/movies" style={setActive}>
+              Movies
+            </NavLink>
+          </li>
+        </ul>
+      </nav>
+      <main className={s.container}>
+        <Outlet />
+      </main>
+    </>
+  );
+}
 
 // const Navigation = () => {
 //   return (

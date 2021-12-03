@@ -3,21 +3,15 @@
 // import PropTypes from 'prop-types';
 // import './Cast.scss';
 // import defaultImage from '../../img/default.png';
+import { Link } from "react-router-dom";
 
 export function Cast() {
-    return (
-        <>
-        <h2>Cast</h2>
-
-
-        </>
-
-    )
-    
-};
-
-
-
+  return (
+    <>
+      <h2>Cast</h2>
+    </>
+  );
+}
 
 // export default class Cast extends Component {
 //   state = {

@@ -4,17 +4,36 @@
 // import SearchBar from '../components/SearchBar';
 // import queryString from 'query-string';
 // import Button from '@material-ui/core/Button';
+import { Reviews } from "../components/Reviews/Reviews";
+import { Cast } from "../components/Cast/Cast";
+import { Link, Outlet, Routes, Route } from "react-router-dom";
+import SearchBar from "../components/SearchBar/SearchBar";
+export function MoviesPage() {
+  return (
+    <>
+      <SearchBar />
+      <h2> MoviesPage</h2>
+      <ul>
+        <li>
+          <Link to="cast">cast</Link>
+        </li>
+        <li>
+          <Link to="reviews">reviews</Link>
+        </li>
+      </ul>
+      {/* <Routes>
+          <Route path=":cast" element={<Cast />} />
+          <Route path=":reviews" element={<Reviews />}
+        </Routes>  */}
+      <Routes>
+        <Route to=":cast" element={<Cast />} />
+        <Route to=":reviews" element={<Reviews />} />
+      </Routes>
 
-
-export function MoviesPage ()  {
-    return (
-      
-        <h2> MoviesPage</h2>
-  )  
-};
-
-
-
+      <Outlet />
+    </>
+  );
+}
 
 // class MoviesPage extends Component {
 //   state = {

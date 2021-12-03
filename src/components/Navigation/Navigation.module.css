@@ -1,0 +1,33 @@
+.nav {
+  background-color: chocolate;
+}
+
+.nav__list {
+  display: flex;
+  justify-content: center;
+
+  padding-top: 40px;
+  padding-bottom: 20px;
+}
+
+/* .nav__item:nth-child() {
+  margin-right: 40px;
+} */
+
+.nav__item {
+  display: flex;
+  flex-direction: column;
+  height: 40px;
+  width: 80px;
+  margin-right: 40px;
+  border: 1px solid rgb(54, 45, 138);
+  background-color: skyblue;
+  border-radius: 20%;
+  font-size: 20px;
+  color: rgb(13, 94, 201);
+  align-content: center;
+  justify-content: center;
+}
+.active-link {
+  color: white;
+}

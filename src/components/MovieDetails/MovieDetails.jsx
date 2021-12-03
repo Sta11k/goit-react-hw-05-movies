@@ -1,6 +1,28 @@
 // import s from './MovieDetails.module.scss';
 // import PropTypes from 'prop-types';
 // import defaultImage from '../../img/default.png';
+// import { Cast } from "../Cast/Cast";
+// import { Reviews } from "../Reviews/Reviews";
+// import { Link, Outlet, Routes, Route } from "react-router-dom";
+// export function MovieDetails() {
+//   return (
+//     <div>
+//       <ul>
+//         <li>
+//           <Link path="cast">cast</Link>
+//         </li>
+//         <li>
+//           <Link path="reviews">reviews</Link>
+//         </li>
+//       </ul>
+//       {/* <Routes>
+//             <Route path=":cast" element={<Cast />} />
+//             <Route path=":reviews" element={<Reviews />}
+//           </Routes> */}
+//       <Outlet />
+//     </div>
+//   );
+// }
 
 // const MovieDetails = ({
 //   title,

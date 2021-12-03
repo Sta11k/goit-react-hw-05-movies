@@ -1,3 +1,37 @@
+import { React, useState } from "react";
+import s from "./SearchBar.module.css";
+export default function SearchBar({ onSubmit }) {
+  const [value, setValue] = useState("");
+
+  const SubmitHandler = (e) => {
+    e.preventDefault();
+    console.log(" перед отправкой", value);
+    onSubmit(value.trim().toLowerCase());
+    setValue("");
+  };
+  const changeHandler = (e) => {
+    setValue(e.target.value);
+  };
+  return (
+    <header className="Searchbar">
+      <form className="SearchForm" onSubmit={SubmitHandler}>
+        <input
+          className={s.searchForm__input}
+          type="text"
+          onChange={changeHandler}
+          value={value}
+          //   autocomplete="off"
+          //   autofocus
+          placeholder="Search movies"
+        />{" "}
+        <button type="submit" className={s.searchForm__button}>
+          <span className="SearchForm-button-label">Search</span>
+        </button>
+      </form>
+    </header>
+  );
+}
+
 // import { Component } from 'react';
 // import './SearchBar.scss';
 
