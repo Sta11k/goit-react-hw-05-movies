@@ -1,7 +1,15 @@
-export  function HomePage(params) {
+import { MovieTrends } from '../components/MovieTrends/MovieTrends';
+
+export function HomePage() {
     
     return (
-        <h1>HomePage</h1>
+
+        <>
+    <h1>HomePage</h1>
+    <MovieTrends/>
+        </>    
+      
+
     )
 };
 

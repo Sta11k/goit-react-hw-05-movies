@@ -1,17 +1,19 @@
 import axios from "axios";
-
+import { useState } from 'react';
 const API_KEY = "eef1cd881f885cf39765ac4359f8bbb0";
 axios.defaults.baseURL = "https://api.themoviedb.org/3/";
 // export const PER_PAGE = 12;
 
-export const getMoviesTrand = async (page = 1) => {
-  console.log("GetApiPAGE", page);
+export const getMoviesTrand = async ( ) => {
+  const page = 1;
   return await axios
     .get(`trending/movie/week?api_key=${API_KEY}&page=${page}`)
     .then((response) => response.data.results);
+  
   // .then(response => console.log(response.data.hits));
 };
 
+// console.log(getMoviesTrand());
 // const getMoviesTrand = {
 //   getMoviesTrand,
 // };
