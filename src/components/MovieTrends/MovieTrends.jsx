@@ -1,26 +1,28 @@
 // import { Link, withRouter } from 'react-router-dom';
 // import MovieTrendsItem from './MovieTrendsItem';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
+import s from './MovieTrends.module.css';
 // import { Navigation } from '../components/Navigation/Navigation';
   import { getMoviesTrand } from '../../services/moviesApi';
 export function MovieTrends({ page}) {
     
     const [movies, setMovies] = useState([]);
-    // useEffect(() => {
-    //      getMoviesTrand(page).then(data => setMovies(data));
+    useEffect(() => {
+         getMoviesTrand(page).then(data => setMovies(data));
       
-    // }, [page])
+    }, [page])
   
-   getMoviesTrand(1).then(data => setMovies(data));
-      
+//    getMoviesTrand(1).then(data => setMovies(data));
+      console.log(movies);
     return (
-        <ul>
+        <div className={ s.wrap} >
+              <ul className={s.movies__list } >
            { movies.map(({ title,id,poster_path }) => {
                 return (
-                    <li key={id }>
+                    <li key={id} className={s.movies__item } >
                         <h3>{title} </h3>
                         <img className="setMovies" src={poster_path}
-                            alt={title}
+                            alt={title} width="300px" height="300px"
                             // style ="wa   "
                         />
                     </li>
@@ -32,6 +34,8 @@ export function MovieTrends({ page}) {
 
            
         </ul>
+        </div>
+      
     )
 }
 
